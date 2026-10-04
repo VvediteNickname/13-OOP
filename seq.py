@@ -43,7 +43,7 @@ class Seq:
         return len(self.__sequence)
 
     def __str__(self) -> str:
-        return f"Seq(id={self.identifier}, length={len(self)}, alphabet={self.alphabet})"
+        return f"Seq(length={len(self)}, alphabet={self.alphabet})"
 
     def __repr__(self) -> str:
         return f"Seq(header={self.__header!r}, length={len(self)})"
