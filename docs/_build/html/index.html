@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classes for FASTA &mdash; документация Classes for FASTA 0.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6ff560e8"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=cd1d70c9"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Classes for FASTA
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Classes for FASTA</a><ul>
+<li><a class="reference internal" href="#seq.NUCLEOTIDE_ALPHABET"><code class="docutils literal notranslate"><span class="pre">NUCLEOTIDE_ALPHABET</span></code></a></li>
+<li><a class="reference internal" href="#seq.PROTEIN_ALPHABET"><code class="docutils literal notranslate"><span class="pre">PROTEIN_ALPHABET</span></code></a></li>
+<li><a class="reference internal" href="#seq.Seq"><code class="docutils literal notranslate"><span class="pre">Seq</span></code></a><ul>
+<li><a class="reference internal" href="#seq.Seq.alphabet"><code class="docutils literal notranslate"><span class="pre">Seq.alphabet</span></code></a></li>
+<li><a class="reference internal" href="#seq.Seq.header"><code class="docutils literal notranslate"><span class="pre">Seq.header</span></code></a></li>
+<li><a class="reference internal" href="#seq.Seq.sequence"><code class="docutils literal notranslate"><span class="pre">Seq.sequence</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fasta_reader.FastaReader"><code class="docutils literal notranslate"><span class="pre">FastaReader</span></code></a><ul>
+<li><a class="reference internal" href="#fasta_reader.FastaReader.read"><code class="docutils literal notranslate"><span class="pre">FastaReader.read()</span></code></a></li>
+<li><a class="reference internal" href="#fasta_reader.FastaReader.validate"><code class="docutils literal notranslate"><span class="pre">FastaReader.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Classes for FASTA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Classes for FASTA</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="classes-for-fasta">
+<h1>Classes for FASTA<a class="headerlink" href="#classes-for-fasta" title="Ссылка на этот заголовок"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p id="module-seq">Модуль для работы с одной биологической последовательностью.</p>
+<p>Содержит класс Seq, который хранит одну запись (последовательность + заголовок)
+и умеет определять её тип (нуклеотидная / белковая).</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="seq.NUCLEOTIDE_ALPHABET">
+<span class="sig-prename descclassname"><span class="pre">seq.</span></span><span class="sig-name descname"><span class="pre">NUCLEOTIDE_ALPHABET</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'A',</span> <span class="pre">'B',</span> <span class="pre">'C',</span> <span class="pre">'D',</span> <span class="pre">'G',</span> <span class="pre">'H',</span> <span class="pre">'K',</span> <span class="pre">'M',</span> <span class="pre">'N',</span> <span class="pre">'R',</span> <span class="pre">'S',</span> <span class="pre">'T',</span> <span class="pre">'U',</span> <span class="pre">'V',</span> <span class="pre">'W',</span> <span class="pre">'Y'}</span></span><a class="headerlink" href="#seq.NUCLEOTIDE_ALPHABET" title="Ссылка на это определение"></a></dt>
+<dd><p>Множество символов нуклеотидного алфавита (ДНК и РНК).
+Включает стандартные A, T, G, C, U и вырожденные IUPAC-коды.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="seq.PROTEIN_ALPHABET">
+<span class="sig-prename descclassname"><span class="pre">seq.</span></span><span class="sig-name descname"><span class="pre">PROTEIN_ALPHABET</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'A',</span> <span class="pre">'B',</span> <span class="pre">'C',</span> <span class="pre">'D',</span> <span class="pre">'E',</span> <span class="pre">'F',</span> <span class="pre">'G',</span> <span class="pre">'H',</span> <span class="pre">'I',</span> <span class="pre">'K',</span> <span class="pre">'L',</span> <span class="pre">'M',</span> <span class="pre">'N',</span> <span class="pre">'O',</span> <span class="pre">'P',</span> <span class="pre">'Q',</span> <span class="pre">'R',</span> <span class="pre">'S',</span> <span class="pre">'T',</span> <span class="pre">'U',</span> <span class="pre">'V',</span> <span class="pre">'W',</span> <span class="pre">'X',</span> <span class="pre">'Y',</span> <span class="pre">'Z'}</span></span><a class="headerlink" href="#seq.PROTEIN_ALPHABET" title="Ссылка на это определение"></a></dt>
+<dd><p>Множество символов белкового алфавита (20 стандартных аминокислот
+плюс редкие X, B, Z, U, O).</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="seq.Seq">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">seq.</span></span><span class="sig-name descname"><span class="pre">Seq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seq.html#Seq"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#seq.Seq" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Хранит одну биологическую последовательность и её заголовок.</p>
+<p>Объект Seq — это одна запись из FASTA-файла: заголовок (без символа <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>)
+и сама последовательность. Пробельные символы удаляются автоматически,
+регистр приводится к верхнему.</p>
+<p>Атрибуты класса не описаны как публичные — доступ к данным идёт через
+свойства <code class="docutils literal notranslate"><span class="pre">sequence</span></code> и <code class="docutils literal notranslate"><span class="pre">header</span></code>, а тип последовательности — через
+свойство <code class="docutils literal notranslate"><span class="pre">alphabet</span></code>.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="seq.Seq.alphabet">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">alphabet</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#seq.Seq.alphabet" title="Ссылка на это определение"></a></dt>
+<dd><p>Определяет тип последовательности.</p>
+<p>Сначала проверяется нуклеотидный алфавит (он уже), затем белковый.
+Если ни один не подошёл — возвращается <code class="docutils literal notranslate"><span class="pre">&quot;unknown&quot;</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Результат<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">&quot;nucleotide&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;protein&quot;</span></code> или <code class="docutils literal notranslate"><span class="pre">&quot;unknown&quot;</span></code>.</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="seq.Seq.header">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">header</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#seq.Seq.header" title="Ссылка на это определение"></a></dt>
+<dd><p>Заголовок FASTA-записи.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Результат<span class="colon">:</span></dt>
+<dd class="field-odd"><p>заголовок без символа <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> и без пробелов по краям.</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="seq.Seq.sequence">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sequence</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#seq.Seq.sequence" title="Ссылка на это определение"></a></dt>
+<dd><p>Сама последовательность.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Результат<span class="colon">:</span></dt>
+<dd class="field-odd"><p>последовательность в верхнем регистре без пробельных символов.</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<p id="module-fasta_reader">Модуль для чтения FASTA-файлов.</p>
+<p>Содержит класс FastaReader, который проверяет формат файла и
+итеративно отдаёт объекты Seq по одной записи (генератор).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="fasta_reader.FastaReader">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">fasta_reader.</span></span><span class="sig-name descname"><span class="pre">FastaReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fasta_reader.html#FastaReader"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#fasta_reader.FastaReader" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Читает FASTA-файл и возвращает объекты Seq.</p>
+<p>Класс не хранит последовательности — он лишь умеет их извлекать
+из файла. Для проверки формата используется метод <a class="reference internal" href="#fasta_reader.FastaReader.validate" title="fasta_reader.FastaReader.validate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">validate()</span></code></a>,
+для итерации по записям — метод <a class="reference internal" href="#fasta_reader.FastaReader.read" title="fasta_reader.FastaReader.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fasta_reader.FastaReader.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fasta_reader.html#FastaReader.read"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#fasta_reader.FastaReader.read" title="Ссылка на это определение"></a></dt>
+<dd><p>Генератор: возвращает объекты Seq по одному.</p>
+<p>Файл читается построчно. Строки, начинающиеся с <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, считаются
+заголовками и начинают новую запись. Остальные строки добавляются
+к текущей последовательности. Пустые строки пропускаются.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Seq</em> – очередная запись из файла.</p>
+</dd>
+<dt class="field-even">Исключение<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – если файл по указанному пути не существует.</p></li>
+<li><p><strong>ValueError</strong> – если файл не соответствует формату FASTA
+    (не начинается с <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, содержит последовательность
+    без заголовка).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Пример</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reader</span> <span class="o">=</span> <span class="n">FastaReader</span><span class="p">(</span><span class="s2">&quot;sample.fasta&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">seq</span> <span class="ow">in</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">),</span> <span class="n">seq</span><span class="o">.</span><span class="n">alphabet</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fasta_reader.FastaReader.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/fasta_reader.html#FastaReader.validate"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#fasta_reader.FastaReader.validate" title="Ссылка на это определение"></a></dt>
+<dd><p>Проверяет, что файл соответствует формату FASTA.</p>
+<p>Достаточное условие: файл существует, не пуст, и первая непустая
+строка начинается с символа <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Результат<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code>, если файл похож на FASTA, иначе <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Ссылка на этот заголовок"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Алфавитный указатель</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Состав модуля</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Поиск</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2026, Тася. </p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

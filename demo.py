@@ -19,6 +19,7 @@ print("Записи в файле:")
 total = 0
 for seq in reader.read():
     total += 1
-    print(f"  {seq}")
+    print(f"{seq.__str__()}")
+    print()
 
 print(f"Всего записей: {total}")
