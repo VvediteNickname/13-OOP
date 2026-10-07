@@ -41,6 +41,7 @@ class Seq:
         Raises:
             ValueError: если ``sequence`` пустая строка.
         """
+
         if sequence == "":
             raise ValueError("Последовательность не может быть пустой")
 
@@ -80,10 +81,10 @@ class Seq:
         Returns:
             str: ``"nucleotide"``, ``"protein"`` или ``"unknown"``.
         """
-        chars = set(self.__sequence)
-        if chars <= NUCLEOTIDE_ALPHABET:
+        seq_set = set(self.__sequence)
+        if seq_set <= NUCLEOTIDE_ALPHABET:
             return "nucleotide"
-        if chars <= PROTEIN_ALPHABET:
+        if seq_set <= PROTEIN_ALPHABET:
             return "protein"
         return "unknown"
 
@@ -106,7 +107,7 @@ class Seq:
             str: многострочная строка с заголовком, длиной и алфавитом.
         """
         return (
-            f"Последовательность: {self.__header}\n"
+            f"Заголовок:          {self.__header}\n"
             f"Длина:              {len(self)}\n"
             f"Алфавит:            {self.alphabet}"
         )
@@ -120,6 +121,6 @@ class Seq:
         """
         return (
             f"Seq(header={self.__header!r}, "
-            f"alphabet={self.alphabet}, "
-            f"length={len(self)})"
+            f"length={len(self)}), "
+            f"alphabet={self.alphabet}"
         )

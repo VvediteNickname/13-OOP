@@ -141,11 +141,6 @@
 <span class="sd">            ValueError: если файл не соответствует формату FASTA</span>
 <span class="sd">                (не начинается с ``&gt;``, содержит последовательность</span>
 <span class="sd">                без заголовка).</span>
-
-<span class="sd">        Example:</span>
-<span class="sd">            &gt;&gt;&gt; reader = FastaReader(&quot;sample.fasta&quot;)</span>
-<span class="sd">            &gt;&gt;&gt; for seq in reader.read():</span>
-<span class="sd">            ...     print(len(seq), seq.alphabet)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__path</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Файл не найден: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>

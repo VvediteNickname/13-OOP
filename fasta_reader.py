@@ -65,11 +65,6 @@ class FastaReader:
             ValueError: если файл не соответствует формату FASTA
                 (не начинается с ``>``, содержит последовательность
                 без заголовка).
-
-        Example:
-            >>> reader = FastaReader("sample.fasta")
-            >>> for seq in reader.read():
-            ...     print(len(seq), seq.alphabet)
         """
         if not os.path.exists(self.__path):
             raise FileNotFoundError(f"Файл не найден: {self.__path}")
